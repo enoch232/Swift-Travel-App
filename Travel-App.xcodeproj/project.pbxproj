@@ -18,6 +18,7 @@
 		7B36AD2C1E747110008E09E2 /* Travel_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B36AD2A1E747110008E09E2 /* Travel_App.xcdatamodeld */; };
 		7B36AD2E1E747110008E09E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B36AD2D1E747110008E09E2 /* Assets.xcassets */; };
 		7B36AD311E747110008E09E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36AD2F1E747110008E09E2 /* LaunchScreen.storyboard */; };
+		7BEC391B1E751519000A3C98 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEC391A1E751519000A3C98 /* UpdateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7B36AD2D1E747110008E09E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B36AD301E747110008E09E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B36AD321E747110008E09E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BEC391A1E751519000A3C98 /* UpdateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				7B36AD231E747110008E09E2 /* AppDelegate.swift */,
 				7B36AD251E747110008E09E2 /* ViewController.swift */,
 				7B36AD271E747110008E09E2 /* Main.storyboard */,
+				7BEC391A1E751519000A3C98 /* UpdateViewController.swift */,
 				7B233E591E74E4700074C417 /* NewPlaceViewController.swift */,
 				7B233E471E74D8C40074C417 /* DetailViewController.swift */,
 				7B36AD2D1E747110008E09E2 /* Assets.xcassets */,
@@ -156,6 +159,7 @@
 			files = (
 				7B233E571E74E33B0074C417 /* PlacesMO+CoreDataClass.swift in Sources */,
 				7B233E581E74E33B0074C417 /* PlacesMO+CoreDataProperties.swift in Sources */,
+				7BEC391B1E751519000A3C98 /* UpdateViewController.swift in Sources */,
 				7B36AD2C1E747110008E09E2 /* Travel_App.xcdatamodeld in Sources */,
 				7B36AD261E747110008E09E2 /* ViewController.swift in Sources */,
 				7B233E5A1E74E4700074C417 /* NewPlaceViewController.swift in Sources */,
