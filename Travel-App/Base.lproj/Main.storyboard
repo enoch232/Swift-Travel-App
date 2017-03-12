@@ -313,7 +313,7 @@
                         <outlet property="editDescriptionTextField" destination="BFM-YZ-7f2" id="3ca-IU-ebL"/>
                         <outlet property="editImageView" destination="Dd8-gl-sKw" id="2YS-wx-mt4"/>
                         <outlet property="editNameTextField" destination="Gha-BX-Far" id="tX8-Dx-w91"/>
-                        <segue destination="Tn8-k4-GmV" kind="unwind" unwindAction="unwindToViewController2WithSegue:" id="FW4-Ra-zas"/>
+                        <segue destination="Tn8-k4-GmV" kind="unwind" unwindAction="unwindToViewController2WithSegue:" id="awd-Ya-MWI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3h-Cc-SyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
