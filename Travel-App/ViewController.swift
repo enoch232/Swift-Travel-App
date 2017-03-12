@@ -10,17 +10,32 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tablelist: UITableView!
     var users_count:Int = 0
-
-    var viewContext: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
-
-    
-
+    var places: [NSManagedObject] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("loaded")
         // Do any additional setup after loading the view, typically from a nib.
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Places")
+        do {
+            places = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        print(places.count)
+        print("loaded again")
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,62 +44,38 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContextviewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Places")
-        request.returnsObjectsAsFaults = false
+        let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate
+        let managedContext =
+            appDelegate!.persistentContainer.viewContext
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Places")
         do {
-            let users = try viewContext.fetch(request)
-            users_count = users.count
-            
-
-        } catch {
-            users_count = 0
+            places = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
-        print(users_count)
-        return users_count
+        print(places.count)
+        return places.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-        let place = NSFetchRequest<NSFetchRequestResult>(entityName: "Places")
+//        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+//        let place = places[indexPath.row]
+//        cell.textLabel?.text = place.value(forKeyPath: "name") as? String
         
-        do {
-            let fetchedPlaces = try viewContext.fetch(place) as! [PlacesMO]
-            let singlePlace = fetchedPlaces[indexPath.row]
-            cell.textLabel?.text = singlePlace.name
-
-        } catch {
-            fatalError("Failed to fetch places: \(error)")
-        }
-        print("table row")
+        
+        
+        
+        let cell:MyCustomCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! MyCustomCell
+        
+        cell.myCellPlace = places[indexPath.row]
+        
         return(cell)
+        
+        
+        
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        selectedIndex = indexPath.row
-//        performSegue(withIdentifier: "detail", sender: self)
-//        
-//    }
-//    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//        let detailController = segue.destination as! DetailController
-//        detailController.selectedIndex = selectedIndex
-//        detailController.placeList = self.placeList
-//        
-//    }
-//    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            self.placeList.removeAt(index: indexPath.row)
-//            self.tablelist.deleteRows(at: [indexPath], with: .automatic)
-//        }
-//    }
-
 
 }
 

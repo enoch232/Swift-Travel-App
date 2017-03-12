@@ -10,11 +10,6 @@ import UIKit
 import CoreData
 
 class NewPlaceViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    let insertContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
-    
-    var viewContext: NSManagedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
-    
 
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var placeNameTextField: UITextField!
@@ -48,35 +43,30 @@ class NewPlaceViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Places", in: self.insertContext!)
-        
-        let newPlace = PlacesMO(entity: entity!, insertInto: self.insertContext!)
-        
-        newPlace.name = selectedImage.description
-        let imageData = UIImagePNGRepresentation(selectedImage.image!)
-        
-        newPlace.picture = imageData! as NSData?
-        newPlace.name = placeNameTextField.text!
-        newPlace.small_description = placeDescriptionTextField.text!
-        
-        do {
-            try self.insertContext?.save()
-        } catch _ {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
         }
         
+        // 1
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
         
-        print(newPlace)
+        let place = NSEntityDescription.insertNewObject(forEntityName: "Places", into: managedContext) as! PlacesMO
+        place.setValue(placeNameTextField.text!, forKeyPath: "name")
+        place.setValue(placeDescriptionTextField.text!, forKeyPath: "small_description")
+        place.setValue(UIImagePNGRepresentation(selectedImage.image!), forKeyPath: "picture")
+
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+
+
+        
+        print(place)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
