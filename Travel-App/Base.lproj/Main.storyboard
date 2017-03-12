@@ -172,9 +172,11 @@
                         <outlet property="placeDescriptionTextField" destination="7Xr-qk-ZZ2" id="cHF-1u-RlK"/>
                         <outlet property="placeNameTextField" destination="zkC-es-gFK" id="KyG-UA-xuk"/>
                         <outlet property="selectedImage" destination="r6d-6S-dnI" id="JHf-GQ-iSV"/>
+                        <segue destination="6eo-Gb-dDT" kind="unwind" unwindAction="unwindToViewController2WithSegue:" id="X4a-ty-LoP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzC-aA-77v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6eo-Gb-dDT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="240.80000000000001" y="934.18290854572717"/>
         </scene>
@@ -227,9 +229,11 @@
                         <outlet property="detailDescription" destination="wC8-ju-cer" id="kJV-zu-KiM"/>
                         <outlet property="detailName" destination="VnP-k8-ojr" id="1Tm-tA-gJn"/>
                         <outlet property="detailPicture" destination="Dej-Z9-uxT" id="twK-Rk-FVH"/>
+                        <segue destination="0Ae-fn-kKZ" kind="unwind" unwindAction="unwindToViewController2WithSegue:" id="nRw-54-PSn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcM-7Y-R21" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0Ae-fn-kKZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1184.8" y="179.46026986506749"/>
         </scene>
@@ -309,9 +313,11 @@
                         <outlet property="editDescriptionTextField" destination="BFM-YZ-7f2" id="3ca-IU-ebL"/>
                         <outlet property="editImageView" destination="Dd8-gl-sKw" id="2YS-wx-mt4"/>
                         <outlet property="editNameTextField" destination="Gha-BX-Far" id="tX8-Dx-w91"/>
+                        <segue destination="Tn8-k4-GmV" kind="unwind" unwindAction="unwindToViewController2WithSegue:" id="FW4-Ra-zas"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3h-Cc-SyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Tn8-k4-GmV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2121" y="178"/>
         </scene>
