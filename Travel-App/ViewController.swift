@@ -37,6 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         print(places.count)
         print("loaded again")
+        self.tablelist.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,25 +83,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let detailViewController = segue.destination as! DetailViewController
-        
-//        let place = places[selectedIndex]
-        detailViewController.selectedIndex = selectedIndex
-        detailViewController.places = places
-//        detailViewController.detailName?.text = place.value(forKeyPath: "name") as? String
-//        detailViewController.detailDescription?.text = place.value(forKeyPath: "small_description") as? String
-//        let picture = UIImage(data: place.value(forKeyPath: "picture")  as! Data)
-//        detailViewController.detailPicture?.image = picture
+        if segue.identifier == "detail" {
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.selectedIndex = selectedIndex
+            detailViewController.places = places
+        }
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            self.places.removeAt(index: indexPath.row)
-//            self.tablelist.deleteRows(at: [indexPath], with: .automatic)
-//        }
-//    }
-//    
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let appDelegate =
+                UIApplication.shared.delegate as? AppDelegate
+            let managedContext =
+                appDelegate!.persistentContainer.viewContext
+            let fetchRequest =
+                NSFetchRequest<NSManagedObject>(entityName: "Places")
+            do {
+                places = try managedContext.fetch(fetchRequest)
+                managedContext.delete(places[indexPath.row])
+                places.remove(at: indexPath.row)
+                try managedContext.save()
+                self.tablelist.deleteRows(at: [indexPath], with: .automatic)
+            } catch let error as NSError {
+                print("Could not Delete. \(error), \(error.userInfo)")
+            }
+        }
+    }
     
 
 }
