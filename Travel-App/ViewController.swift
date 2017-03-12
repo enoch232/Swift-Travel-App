@@ -67,9 +67,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
-        let cell:MyCustomCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! MyCustomCell
+        let cell:MyCustomCell = tablelist.dequeueReusableCell(withIdentifier: "cell") as! MyCustomCell
         
-        cell.myCellPlace = places[indexPath.row]
+        let place = places[indexPath.row]
+        cell.myCellName.text = place.value(forKeyPath: "name") as? String
+        let picture = UIImage(data: place.value(forKeyPath: "picture")  as! Data)
+        cell.myCellPicture.image = picture
         
         return(cell)
         
