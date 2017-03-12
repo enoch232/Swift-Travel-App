@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Place" representedClassName="Place" syncable="YES" codeGenerationType="class">
+    <entity name="Places" representedClassName=".PlacesMO" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="small_description" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Place" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Places" positionX="-54" positionY="-9" width="128" height="90"/>
     </elements>
 </model>

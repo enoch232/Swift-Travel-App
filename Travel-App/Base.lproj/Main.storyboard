@@ -28,7 +28,7 @@
         <!--View Controller-->
         <scene sceneID="zNw-dl-3NG">
             <objects>
-                <viewController id="i6N-7W-7va" sceneMemberID="viewController">
+                <viewController id="i6N-7W-7va" customClass="ViewController" customModule="Travel_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Gf-HA-xGv"/>
                         <viewControllerLayoutGuide type="bottom" id="2Yg-J0-YA2"/>
@@ -55,7 +55,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nli-gw-z4a"/>
+                    <toolbarItems>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Qxn-Fc-9Mh"/>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="aLy-Yp-bvV"/>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="VH0-wg-ORP"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="nli-gw-z4a">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Blw-EC-2XR"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Ivr-Ph-buh"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="Vlk-Ec-zmN" kind="showDetail" id="iP6-gs-5r8"/>
                     </connections>
@@ -64,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="285.60000000000002" y="179.46026986506749"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="7kD-jC-3kh">
             <objects>
-                <viewController id="Vlk-Ec-zmN" sceneMemberID="viewController">
+                <viewController id="Vlk-Ec-zmN" customClass="DetailViewController" customModule="Travel_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F7E-04-a9h"/>
                         <viewControllerLayoutGuide type="bottom" id="nqf-mY-SLh"/>
@@ -80,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcM-7Y-R21" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="180"/>
+            <point key="canvasLocation" x="1184.8" y="179.46026986506749"/>
         </scene>
     </scenes>
 </document>

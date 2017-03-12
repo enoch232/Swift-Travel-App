@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B233E481E74D8C40074C417 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B233E471E74D8C40074C417 /* DetailViewController.swift */; };
+		7B233E571E74E33B0074C417 /* PlacesMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B233E551E74E33B0074C417 /* PlacesMO+CoreDataClass.swift */; };
+		7B233E581E74E33B0074C417 /* PlacesMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B233E561E74E33B0074C417 /* PlacesMO+CoreDataProperties.swift */; };
 		7B36AD241E747110008E09E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36AD231E747110008E09E2 /* AppDelegate.swift */; };
 		7B36AD261E747110008E09E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B36AD251E747110008E09E2 /* ViewController.swift */; };
 		7B36AD291E747110008E09E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B36AD271E747110008E09E2 /* Main.storyboard */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B233E471E74D8C40074C417 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7B233E551E74E33B0074C417 /* PlacesMO+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PlacesMO+CoreDataClass.swift"; path = "../PlacesMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7B233E561E74E33B0074C417 /* PlacesMO+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "PlacesMO+CoreDataProperties.swift"; path = "../PlacesMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7B36AD201E747110008E09E2 /* Travel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B36AD231E747110008E09E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B36AD251E747110008E09E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,9 +62,12 @@
 		7B36AD221E747110008E09E2 /* Travel-App */ = {
 			isa = PBXGroup;
 			children = (
+				7B233E551E74E33B0074C417 /* PlacesMO+CoreDataClass.swift */,
+				7B233E561E74E33B0074C417 /* PlacesMO+CoreDataProperties.swift */,
 				7B36AD231E747110008E09E2 /* AppDelegate.swift */,
 				7B36AD251E747110008E09E2 /* ViewController.swift */,
 				7B36AD271E747110008E09E2 /* Main.storyboard */,
+				7B233E471E74D8C40074C417 /* DetailViewController.swift */,
 				7B36AD2D1E747110008E09E2 /* Assets.xcassets */,
 				7B36AD2F1E747110008E09E2 /* LaunchScreen.storyboard */,
 				7B36AD321E747110008E09E2 /* Info.plist */,
@@ -139,9 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B233E571E74E33B0074C417 /* PlacesMO+CoreDataClass.swift in Sources */,
+				7B233E581E74E33B0074C417 /* PlacesMO+CoreDataProperties.swift in Sources */,
 				7B36AD2C1E747110008E09E2 /* Travel_App.xcdatamodeld in Sources */,
 				7B36AD261E747110008E09E2 /* ViewController.swift in Sources */,
 				7B36AD241E747110008E09E2 /* AppDelegate.swift in Sources */,
+				7B233E481E74D8C40074C417 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +313,7 @@
 				7B36AD371E747110008E09E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
