@@ -7,13 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var detailName: UILabel?
+    @IBOutlet weak var detailPicture: UIImageView?
+    @IBOutlet weak var detailDescription: UILabel?
+    var selectedIndex:Int = 0
+    var places: [NSManagedObject] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.detailName?.text = places[selectedIndex].value(forKeyPath: "name") as? String
+        self.detailDescription?.text = places[selectedIndex].value(forKeyPath: "small_description") as? String
 
-        // Do any additional setup after loading the view.
+        self.detailPicture?.image = UIImage(data: places[selectedIndex].value(forKeyPath: "picture")  as! Data)
+
     }
 
     override func didReceiveMemoryWarning() {
